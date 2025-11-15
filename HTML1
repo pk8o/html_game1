@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Hub<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #282c34;
+color: #ffffff;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+}
+h1 {
+margin-bottom: 20px;
+font-size: 2.5em;
+}
+.game-list {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.game-button {
+background-color: #61dafb;
+border: none;
+padding: 15px 30px;
+margin: 10px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 1.2em;
+transition: background-color 0.3s;
+}
+.game-button:hover {
+background-color: #21a1f1;
+}
+.iframe-container {
+width: 100%;
+height: 600px;
+display: none;
+margin-top: 20px;
+}
+iframe {
+width: 100%;
+height: 100%;
+border: none;
+}
+</style>
+
+Welcome to the Game Hub!
+<button class="game-button" onclick="loadGame('game1.html')">Play Game 1<button class="game-button" onclick="loadGame('game2.html')">Play Game 2<button class="game-button" onclick="loadGame('game3.html')">Play Game 3<div id="gameFrame" class="iframe-container">
+<iframe id="game" src=""><script>
+function loadGame(game) {
+const gameFrame = document.getElementById('gameFrame');
+const iframe = document.getElementById('game');
+iframe.src = game;
+gameFrame.style.display = 'block';
+}
